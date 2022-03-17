@@ -1,10 +1,14 @@
-#include <stdio.h>
+#include<stdio.h>
+#include "Scroing.h"
 
 
-int main() 
-{
+int main() {
+	bool result = true;
+	int numofwins = numOfWins(result, 2);
 
+	int chips = 500;
 
-
+	//dfdf
+ 
 	return 0;
 }

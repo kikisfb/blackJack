@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Scoring.c" />
     <ClCompile Include="Source.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scroing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
