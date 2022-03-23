@@ -62,3 +62,12 @@ int insuranceForLose(int balance, int bet) {
 	printf("Your new balance after losing: %d\n", balance);
 	return balance;
 }
+void printScores(struct ScoreChart sc) {
+	printf(" ________________________________\n");
+	printf("|Number of wins           %d     |\n",sc.numOfWins);
+	printf("|Number of Loses          %d     |\n", sc.numOfLoses);
+	printf("|Win Streak               %d     |\n", sc.winStreak);
+	printf("|lose Streak              %d     |\n", sc.loseStreak);
+	printf(" ________________________________\n");
+
+}

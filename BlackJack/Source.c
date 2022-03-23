@@ -15,8 +15,8 @@ int main() {
 
 	balance= getBalance(balance, bet);
 	
-	winStreak(false, numofwins);
-	loseStreak(false, numofloses);
+	int winstreak=winStreak(false, numofwins);
+	int losestreak=loseStreak(false, numofloses);
 	if (result == true)
 		balance = winningBalance(bet,balance);
 
@@ -25,5 +25,12 @@ int main() {
 	balance = insuranceForLose(balance, bet);
 	balance = doubleDownForLose(balance, bet);
 	
+
+	struct ScoreChart scores;
+	scores.numOfWins = numofwins;
+	scores.numOfLoses = numofloses;
+	scores.winStreak = winstreak;
+	scores.loseStreak = losestreak;
+	printScores(scores);
 	return 0;
 }

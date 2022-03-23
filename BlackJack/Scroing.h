@@ -10,12 +10,15 @@ int getBalance(int, int);
 int winningBalance(int, int);
 int doubleDownForLose(int, int);
 int insuranceForLose(int, int);
+void printScores(struct ScoreChart);
+
 //struct for showing the streaks and the score chart
 
 typedef struct ScoreChart {
 	int numOfWins;
 	int numOfLoses;
-
+	int winStreak;
+	int loseStreak;
 };
 
 
