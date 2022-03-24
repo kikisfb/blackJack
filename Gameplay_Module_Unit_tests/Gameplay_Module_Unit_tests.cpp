@@ -14,35 +14,35 @@ namespace GameplayModuleUnittests
 	{
 	public:
 		
-		TEST_METHOD(exact21value2)
+		TEST_METHOD(exact21_value2_ExpectedFalse)
 		{
 			int value = 2;
 			bool result = exact21(value);
 			Assert::IsFalse(result);
 		}
 
-		TEST_METHOD(exact21valueNegative15)
+		TEST_METHOD(exact21_valueNegative21_ExpectedFalse)
 		{
-			int value = -15;
+			int value = -21;
 			bool result = exact21(value);
 			Assert::IsFalse(result);
 		}
 
-		TEST_METHOD(exact21value21)
+		TEST_METHOD(exact21_value21_ExpectedTrue)
 		{
 			int value = 21;
 			bool result = exact21(value);
 			Assert::IsTrue(result);
 		}
 
-		TEST_METHOD(exact21value25)
+		TEST_METHOD(exact21_value25_ExpectedFalse)
 		{
 			int value = 25;
 			bool result = exact21(value);
 			Assert::IsFalse(result);
 		}
 
-		TEST_METHOD(exact21value20)
+		TEST_METHOD(exact21_value20_ExpectedFalse)
 		{
 			int value = 20;
 			bool result = exact21(value);
@@ -53,35 +53,35 @@ namespace GameplayModuleUnittests
 	TEST_CLASS(CheckValueTests)
 	{
 	public:
-		TEST_METHOD(check21value7)
+		TEST_METHOD(check21_value7_ExpectedTrue)
 		{
 			int value = 7;
 			bool result = check21(value);
 			Assert::IsTrue(result);
 		}
 
-		TEST_METHOD(check21valueNegative9)
+		TEST_METHOD(check21_valueNegative9_ExpectedTrue)
 		{
 			int value = -9;
 			bool result = check21(value);
 			Assert::IsTrue(result);
 		}
 
-		TEST_METHOD(check21value25)
+		TEST_METHOD(check21_value25_ExpectedFalse)
 		{
 			int value = 35;
 			bool result = check21(value);
 			Assert::IsFalse(result);
 		}
 
-		TEST_METHOD(check21value21)
+		TEST_METHOD(check21_value21_ExpectedTrue)
 		{
 			int value = 21;
 			bool result = check21(value);
 			Assert::IsTrue(result);
 		}
 
-		TEST_METHOD(check21value20)
+		TEST_METHOD(check21_value20_ExpectedTrue)
 		{
 			int value = 20;
 			bool result = check21(value);
@@ -91,7 +91,7 @@ namespace GameplayModuleUnittests
 	TEST_CLASS(CheckResultTests)
 	{
 	public:
-		TEST_METHOD(checkValuesuser20Dealer17)
+		TEST_METHOD(checkValues_user20Dealer17_ExpectedVal1)
 		{
 			int userVal = 21;
 			int dealerVal = 17;
@@ -100,7 +100,7 @@ namespace GameplayModuleUnittests
 			Assert::AreEqual(expected, returnVal);
 		}
 
-		TEST_METHOD(checkValuesuser3Dealer19)
+		TEST_METHOD(checkValues_user3Dealer19_ExpectedVal0)
 		{
 			int userVal = 3;
 			int dealerVal = 19;
@@ -109,7 +109,7 @@ namespace GameplayModuleUnittests
 			Assert::AreEqual(expected, returnVal);
 		}
 
-		TEST_METHOD(checkValuesuserNegative35Dealer17)
+		TEST_METHOD(checkValues_userNegative35Dealer17_ExpectedVal0)
 		{
 			int userVal = -35;
 			int dealerVal = 17;
@@ -118,7 +118,7 @@ namespace GameplayModuleUnittests
 			Assert::AreEqual(expected, returnVal);
 		}
 
-		TEST_METHOD(checkValuesuser20DealerNegative24)
+		TEST_METHOD(checkValues_user21DealerNegative24_ExpectedVal1)
 		{
 			int userVal = 21;
 			int dealerVal = -24;
@@ -127,7 +127,7 @@ namespace GameplayModuleUnittests
 			Assert::AreEqual(expected, returnVal);
 		}
 
-		TEST_METHOD(checkValuesuser15Dealer15)
+		TEST_METHOD(checkValues_user15Dealer15_ExpectedVal0)
 		{
 			int userVal = 15;
 			int dealerVal = 15;
@@ -140,14 +140,14 @@ namespace GameplayModuleUnittests
 	TEST_CLASS(CheckWinTests)
 	{
 	public:
-		TEST_METHOD(checkWinUserWin)
+		TEST_METHOD(checkWin_UserWin_ExpectedTrue)
 		{
 			int winVal = 1;
 			bool result = win(winVal);
 			Assert::IsTrue(result);
 		}
 
-		TEST_METHOD(checkWinUserLoss)
+		TEST_METHOD(checkWin_UserLoss_ExpectedFalse)
 		{
 			int winVal = 0;
 			bool result = win(winVal);
