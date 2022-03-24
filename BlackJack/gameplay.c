@@ -4,6 +4,7 @@
 
 void firstUserOptions(int input)
 {
+
 	switch (input)
 	{
 	case 1:
@@ -56,7 +57,7 @@ bool exact21(val)
 
 bool check21(val)
 {
-	if (val <= 21)
+	if (val < 21)
 		return true;
 	if (val > 21)
 		return false;
@@ -90,42 +91,120 @@ bool win(int res)
 		return true;
 
 }
+
+
 int gameplay()
 {
+	int bet;
 	int dealerVal;
 	int userVal;
 	int res;
+	int playerCard[6] = { 0 };
+	int dealerCards[6] = { 0 };
+	int card[52];
 	int input;
-	//Hit user 2 times
+	int i = 0;
 
-	//Hit dealer 2 times (Hide 1)
+	playerCard[0] = card[0];
+	playerCard[1] = card[1];
+	dealerCards[0] = card[2];
+	dealerCards[1] = card[3];
 
-	//Add up users cards
+	for (i = 0; i < 1; i++)
+	{
+		printf("Input choice:\n");
+		printf("1: Hit (add a card)\n");
+		printf("2: Stand (no more cards)\n");
+		printf("3: Double down (double your bet and get one more card)\n");
+		scanf_s("%d", input);
+		do
+		{
+			firstUserOptions(input);
+		} while (input > 3);
 
-	//Add up dealers cards
+		if (input == 1)
+		{
+			playerCard[i + 2] = card[i + 4];
+			userVal = userVal + playerCard[i + 2];
+			if (exact21(userVal) == true)
+			{
+				return 1;
+			}
+			else if (check21(userVal) == false)
+			{
+				return 0;
+			}
+		}
 
-	//Check if either is at 21
-	if (exact21(dealerVal) == true)
-		return 0;
-	else if (exact21(userVal) == true)
-		return 1;
-	else
-	//Get user input for what they want to do next
-	printf("Input choice:\n");
-	printf("1: Hit (add a card)\n");
-	printf("2: Stand (no more cards)\n");
-	printf("3: Double down (double your bet and get one more card)\n");
-	scanf_s("%d", &input);
-	firstUserOptions(input);
-	//If hit, check total (<22)
-	//dealer's turn
+		if (input == 2)
+		{
+			i = 1;
+		}
 
-	//check if dealer < 17
+		if (input == 3)
+		{
+			bet = (bet * 2);
+			playerCard[i + 2] = card[i + 4];
+			userVal = userVal + playerCard[i + 2];
+			if (exact21(userVal) == true)
+			{
+				return 1;
+			}
+			else if (check21(userVal) == false)
+			{
+				return 0;
+			}
+		}
 
-	//If < 17, hit
 
-	//compare user and dealer
-	res = result();
+	}
+
+	for (i = 0; i < 3; i++)
+	{
+		printf("Input choice:\n");
+		printf("1: Hit (add a card)\n");
+		printf("2: Stand (no more cards)\n");
+		scanf_s("%d", input);
+		do
+		{
+			otherUserOptions(input);
+		} while (input > 2);
+
+		if (input == 1)
+		{
+			playerCard[i + 2] = card[i + 4];
+			userVal = userVal + playerCard[i + 2];
+			if (exact21(userVal) == true)
+			{
+				return 1;
+			}
+			else if (check21(userVal) == false)
+			{
+				return 0;
+			}
+		}
+		if (input == 2)
+		{
+			i = 3;
+		}
+	}
+
+	for (i = 0; i > 4 && dealerVal < 17; i++)
+	{
+		dealerCards[i + 2] = card[i + 7];
+		dealerVal = dealerVal + dealerCards[i + 2];
+		if (exact21(dealerVal) == true)
+		{
+			return 1;
+		}
+		else if (check21(dealerVal) == false)
+		{
+			return 0;
+		}
+	}
+
+
+	res = result(userVal, dealerVal);
 	//Determine winner
-	win(res);
+	return win(res);
 }
