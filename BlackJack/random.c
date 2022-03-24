@@ -4,9 +4,9 @@ int randomGen(int Tracker[])
 	time_t t;
 	srand((unsigned)time(&t));
 	for (int x = 0; x < RANDOM; x++) {
-		int randomNumbers1 = rand() % STANDARD_DECK;
-		int randomNumbers2 = rand() % STANDARD_DECK;
-		int randomNumbers3 = rand() % STANDARD_DECK;
+		int randomNumbers1 = rand() % 51;
+		int randomNumbers2 = rand() % 51;
+		int randomNumbers3 = rand() % 51;
 		// Store XOR of all in a
 		int temp, temp2;
 		temp = Tracker[randomNumbers2];

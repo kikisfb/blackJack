@@ -27,6 +27,10 @@ int settingCards() {
 
 	for (int i = 0; i < STANDARD_DECK; i++)
 	{
+		if (standard[i].number == 0) {
+			standard[i].number = 1;
+			strcpy(standard[i].cardName, "specialAce");
+		}
 		printf("the value of the card is %d: \nit's name is %s:\n", standard[i].number, standard[i].cardName);
 	}
 }
