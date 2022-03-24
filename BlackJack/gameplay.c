@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdbool.h>
-
+#include "Gameplay.h"
 
 void firstUserOptions(int input)
 {
@@ -46,7 +44,7 @@ void otherUserOptions(int input)
 
 }
 
-bool exact21(val)
+bool exact21(int val)
 {
 	if (val == 21)
 		return true;
@@ -55,19 +53,15 @@ bool exact21(val)
 
 }
 
-bool check21(val)
+bool check21(int val)
 {
-	if (val < 21)
-		return true;
 	if (val > 21)
-		return false;
-}
-
-int dealerTurn(int dealerVal)
-{
-	while (dealerVal < 17)
 	{
-		//Hit function for dealer
+		return false;
+	}
+	else if (val <= 21)
+	{
+		return true;
 	}
 }
 
@@ -95,14 +89,14 @@ bool win(int res)
 
 int gameplay()
 {
-	int bet;
-	int dealerVal;
-	int userVal;
+	int bet = 0;
+	int dealerVal = 0;
+	int userVal = 0;
 	int res;
 	int playerCard[6] = { 0 };
 	int dealerCards[6] = { 0 };
 	int card[52];
-	int input;
+	int input = 0;
 	int i = 0;
 
 	playerCard[0] = card[0];
