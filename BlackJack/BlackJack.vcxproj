@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cardDeck.c" />
+    <ClCompile Include="random.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>

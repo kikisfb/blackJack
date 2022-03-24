@@ -14,3 +14,5 @@ typedef struct cardDeck {
 
 
 DECK standard[STANDARD_DECK];
+
+int settingCards();
