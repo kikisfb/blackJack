@@ -4,7 +4,7 @@
 int main() 
 {
 	
-	settingCards();
+	settingCards(); 
 
 	return 0;
 }

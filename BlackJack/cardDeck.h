@@ -1,5 +1,5 @@
 #pragma once
-
+#define RANDOM	30
 #define MAX_LENGTH	50
 #define STANDARD_DECK	52
 #define _CRT_SECURE_NO_WARNINGS 
@@ -14,5 +14,5 @@ typedef struct cardDeck {
 
 
 DECK standard[STANDARD_DECK];
-
+int randomGen(int* a);
 int settingCards();
