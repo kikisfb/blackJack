@@ -10,6 +10,7 @@
 #define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #
 typedef struct cardDeck {// structure for cardDeck function number is the value of the card given and cardName is the name of the card

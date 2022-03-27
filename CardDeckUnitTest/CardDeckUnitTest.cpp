@@ -37,13 +37,14 @@ namespace CardDeckUnitTest
 			Assert::AreEqual(checker, value);
 		}
 		TEST_METHOD(file_checker) {//checks to see if the file was read from correctly in the setting cards function
-			int limit = 0;
 			bool limitchecker = true;
 			settingCards();
-			if (standard->number < 0 || standard->number > 10)
-			{
-				limitchecker = false;
-			}
+			for (int i = 0; i < 52;  i++)
+				if (standard[i].number < -1 || standard[i].number > 52)
+				{
+					limitchecker = false;
+				}
+			
 			Assert::IsTrue(limitchecker);
 		}
 	};
