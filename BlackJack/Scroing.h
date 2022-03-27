@@ -8,7 +8,7 @@ int numOfLoses(bool, int);
 int numOfWins(bool, int);
 int getBalance(int, int);
 int winningBalance(int, int);
-int doubleDownForLose(int, int);
+int doubleDown(bool, int, int);
 int insuranceForLose(int, int);
 void printScores(struct ScoreChart);
 

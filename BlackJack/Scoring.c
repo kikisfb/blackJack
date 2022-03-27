@@ -50,16 +50,26 @@ int winningBalance( int bet, int pastBalance) {
 	printf("Your new balance after winning: %d\n", pastBalance);
 	return pastBalance;
 }
-int doubleDownForLose(int balance, int bet) {
-	
-	balance = getBalance( balance,bet);//doing the get balance again make the balance go down twice
-	printf("Your new balance after double down: %d\n", balance);
+int doubleDown(bool result, int balance, int bet) {
+	if (result == true){
+		balance = balance + (bet * 4);
+		printf("Your new balance after double down: %d\n", balance);
+	}
+	else {
+		balance = getBalance(balance, bet);//doing the get balance again make the balance go down twice
+		printf("Your new balance after double down: %d\n", balance);	
+	}
 	return balance;
 }
-int insuranceForLose(int balance, int bet) {
-                
-	balance = balance + (bet / 2);
-	printf("Your new balance after losing: %d\n", balance);
+int insurance(bool result, int balance, int bet) {
+	if (result == true) {
+		balance = winningBalance(bet, balance);
+	}
+	else {
+		balance = balance + (bet / 2);
+		printf("Your new balance after losing: %d\n", balance);
+	}
+	
 	return balance;
 }
 void printScores(struct ScoreChart sc) {

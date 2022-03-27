@@ -23,7 +23,7 @@ int main() {
 	
 	
 	balance = insuranceForLose(balance, bet);
-	balance = doubleDownForLose(balance, bet);
+	balance = doubleDown(result,balance, bet);
 	
 
 	struct ScoreChart scores;
