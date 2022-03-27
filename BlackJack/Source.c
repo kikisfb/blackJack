@@ -2,7 +2,7 @@
 #include "Scroing.h"
 extern int initialAmountOfChip = 500;
 
-int main() {
+int main(void) {
 	bool result = true;
 	int balance = initialAmountOfChip;
 	int bet = 0;
@@ -33,4 +33,5 @@ int main() {
 	scores.loseStreak = losestreak;
 	printScores(scores);
 	return 0;
+	
 }
