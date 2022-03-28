@@ -26,12 +26,14 @@
     <ClCompile Include="cardDeck.c">
       <Filter>Resource Files\Source Files</Filter>
     </ClCompile>
+cardDeck
     <ClCompile Include="random.c">
       <Filter>Resource Files\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cardDeck.h">
+master
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
