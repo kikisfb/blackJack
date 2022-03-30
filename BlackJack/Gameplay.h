@@ -9,3 +9,4 @@ bool check21(int);
 int result(int, int);
 bool win(int);
 int gameplay();
+bool insure(int);

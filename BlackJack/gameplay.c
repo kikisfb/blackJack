@@ -1,4 +1,14 @@
 #include "Gameplay.h"
+#include "cardDeck.h"
+
+DECK drawCard(DECK d)
+{
+	settingCards();
+	d[STANDARD_DECK];
+	int i = 0;
+	return d[i];
+	i++;
+}
 
 void firstUserOptions(int input)
 {
@@ -86,23 +96,58 @@ bool win(int res)
 
 }
 
+bool insure(int choice)
+{
+	bool result = false;
+
+	if (choice == 1)
+	{
+		result = true;
+	}
+	if (choice == 2)
+	{
+		result == false
+	}
+	return result;
+}
+
 
 int gameplay()
 {
+	bool userAce = false;
+	bool dealerAce = false;
+	DECK card;
 	int bet = 0;
 	int dealerVal = 0;
 	int userVal = 0;
 	int res;
-	int playerCard[6] = { 0 };
-	int dealerCards[6] = { 0 };
+	DECK playerCard[6] = { 0 };
+	DECK dealerCard[6] = { 0 };
 	int card[52];
 	int input = 0;
 	int i = 0;
+	int j = 0;
 
 	playerCard[0] = card[0];
 	playerCard[1] = card[1];
-	dealerCards[0] = card[2];
-	dealerCards[1] = card[3];
+	dealerCard[0] = card[2];
+	dealerCard[1] = card[3];
+
+	printf("Your first card is: %s, with a value of %d", playerCard[0].cardName, playerCard[0].number);
+	printf("Your second card is: %s, with a value of %d", playerCard[1].cardName, playerCard[1].number);
+	userVal = playerCard[0].number + playerCard[1].number;
+	printf("Your current score is: %d", userVal);
+
+	printf("The dealer's face-up card is: %s, with a value of %d", dealerCard[1].cardName, dealerCard[1].number);
+
+	if (dealerCard[1].number == 1)
+	{
+		int dec;
+		printf("Do you want to insure? Press 1 for yes, press 2 for no.");
+		scanf_s("%d", &dec);
+		insure(dec);
+	}
+	dealerVal = dealerCard[0].number + dealerCard[1].number;
 
 	for (i = 0; i < 1; i++)
 	{
@@ -118,8 +163,9 @@ int gameplay()
 
 		if (input == 1)
 		{
-			playerCard[i + 2] = card[i + 4];
-			userVal = userVal + playerCard[i + 2];
+			playerCard[2] = card[4];
+			userVal = userVal + playerCard[2].number;
+			printf("Your new value is: %d", userVal);
 			if (exact21(userVal) == true)
 			{
 				return 1;
@@ -138,8 +184,9 @@ int gameplay()
 		if (input == 3)
 		{
 			bet = (bet * 2);
-			playerCard[i + 2] = card[i + 4];
-			userVal = userVal + playerCard[i + 2];
+			playerCard[2] = card[4];
+			userVal = userVal + playerCard[2].number;
+			printf("Your new value is: %d", userVal);
 			if (exact21(userVal) == true)
 			{
 				return 1;
@@ -166,8 +213,9 @@ int gameplay()
 
 		if (input == 1)
 		{
-			playerCard[i + 2] = card[i + 4];
-			userVal = userVal + playerCard[i + 2];
+			playerCard[i+3] = card[i+5];
+			userVal = userVal + playerCard[i+2].number;
+			printf("Your new value is: %d", userVal);
 			if (exact21(userVal) == true)
 			{
 				return 1;
@@ -185,8 +233,9 @@ int gameplay()
 
 	for (i = 0; i > 4 && dealerVal < 17; i++)
 	{
-		dealerCards[i + 2] = card[i + 7];
-		dealerVal = dealerVal + dealerCards[i + 2];
+		dealerCard[i + 2] = card[i + 8];
+		dealerVal = dealerVal + dealerCards[i + 1];
+		printf("The new value for the dealer is: %d", dealerVal);
 		if (exact21(dealerVal) == true)
 		{
 			return 1;
@@ -197,8 +246,40 @@ int gameplay()
 		}
 	}
 
+	while (j; j < 7; j++)
+	{
+		if (playerCard[j].number == 1)
+			userAce = true;
+	}
+	if (userAce = true)
+	{
+		if (userVal <= 11)
+		{
+			userVal = userVal + 10;
+		}
+	}
 
+	while (j; j < 7; j++)
+	{
+		if (dealerCard[j].number == 1)
+			dealerAce = true;
+	}
+	if (dealerAce = true)
+	{
+		if (dealerVal <= 11)
+		{
+			dealerVal = dealerVal + 10;
+		}
+	}
 	res = result(userVal, dealerVal);
+	if (res == 1)
+	{
+		printf("Congratsulations, you won!!!");
+	}
+	else if (res == 0)
+	{
+		printf("Sorry, you lost. Better luck next time.");
+	}
 	//Determine winner
 	return win(res);
 }
