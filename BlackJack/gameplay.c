@@ -1,7 +1,7 @@
 #include "Gameplay.h"
 #include "cardDeck.h"
 
-DECK drawCard(DECK d)
+DECK* drawCard(DECK d[])
 {
 	d = standard;
 	return d;
@@ -103,7 +103,7 @@ bool insure(int choice)
 	}
 	if (choice == 2)
 	{
-		result == false
+		result == false;
 	}
 	return result;
 }
@@ -113,7 +113,7 @@ int gameplay()
 {
 	bool userAce = false;
 	bool dealerAce = false;
-	DECK card = drawCard(card);
+	DECK card[52] = drawCard(card);
 	int bet = 0;
 	int dealerVal = 0;
 	int userVal = 0;
@@ -231,7 +231,7 @@ int gameplay()
 	for (i = 0; i > 4 && dealerVal < 17; i++)
 	{
 		dealerCard[i + 2] = card[i + 8];
-		dealerVal = dealerVal + dealerCards[i + 1];
+		dealerVal = dealerVal + dealerCard[i + 2].number;
 		printf("The new value for the dealer is: %d", dealerVal);
 		if (exact21(dealerVal) == true)
 		{
@@ -243,7 +243,7 @@ int gameplay()
 		}
 	}
 
-	while (j; j < 7; j++)
+	for (j;  j < 7; j++)
 	{
 		if (playerCard[j].number == 1)
 			userAce = true;
@@ -256,7 +256,7 @@ int gameplay()
 		}
 	}
 
-	while (j; j < 7; j++)
+	for (j; j < 7; j++)
 	{
 		if (dealerCard[j].number == 1)
 			dealerAce = true;

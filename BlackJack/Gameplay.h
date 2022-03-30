@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-DECK drawCard(DECK d);
+DECK* drawCard(DECK d[]);
 void firstUserOptions(int);
 void otherUserOptions(int);
 bool exact21(int);
