@@ -3,11 +3,8 @@
 
 DECK drawCard(DECK d)
 {
-	settingCards();
-	d[STANDARD_DECK];
-	int i = 0;
-	return d[i];
-	i++;
+	d = standard;
+	return d;
 }
 
 void firstUserOptions(int input)
@@ -116,7 +113,7 @@ int gameplay()
 {
 	bool userAce = false;
 	bool dealerAce = false;
-	DECK card;
+	DECK card = drawCard(card);
 	int bet = 0;
 	int dealerVal = 0;
 	int userVal = 0;
