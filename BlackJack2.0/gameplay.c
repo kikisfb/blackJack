@@ -113,14 +113,13 @@ int gameplay()
 {
 	bool userAce = false;
 	bool dealerAce = false;
-	CARD card[52] = drawCard(card);
+	CARD card[52] = { drawCard(card) };
 	int bet = 0;
 	int dealerVal = 0;
 	int userVal = 0;
 	int res;
 	CARD playerCard[6] = { 0 };
 	CARD dealerCard[6] = { 0 };
-	int card[52];
 	int input = 0;
 	int i = 0;
 	int j = 0;

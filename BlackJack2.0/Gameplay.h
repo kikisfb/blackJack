@@ -6,9 +6,9 @@
 typedef struct card
 {
 	int value;
-	char cardName[MAX_NAME]
+	char cardName[MAX_NAME];
 }CARD;
-CARD* drawCard(DECK d[]);
+CARD* drawCard(DECK);
 void firstUserOptions(int);
 void otherUserOptions(int);
 bool exact21(int);
