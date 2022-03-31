@@ -103,7 +103,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
-    <Link>https://github.com/RyanCoding19/CSCN71020-Group6/pull/2/conflict?name=CSCN71020-Group6.slnancestor_oid=b7dc066af05e5a0bcda176da97341caa8e80eae8base_oid=ca5ea68ae1dc3a4f82d8d19d5dcf208a2af47710head_oid=548d9ada92ea7486c66ce17d8b4628ea4e35ebbd
+    <Link>https://github.com/RyanCoding19/CSCN71020-Group6/pull/2/conflict?name=CSCN71020-Group6.sln&ancestor_oid=b7dc066af05e5a0bcda176da97341caa8e80eae8&base_oid=ca5ea68ae1dc3a4f82d8d19d5dcf208a2af47710&head_oid=548d9ada92ea7486c66ce17d8b4628ea4e35ebbd
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
