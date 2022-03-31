@@ -108,6 +108,16 @@ bool insure(int choice)
 	return result;
 }
 
+bool doubleDown(int res)
+{
+	if (res == 3)
+	{
+		return true;
+	}
+	else
+		return false;
+}
+
 
 int gameplay()
 {
@@ -176,24 +186,7 @@ int gameplay()
 		{
 			i = 1;
 		}
-
-		if (input == 3)
-		{
-			bet = (bet * 2);
-			playerCard[2] = card[4];
-			userVal = userVal + playerCard[2].value;
-			printf("Your new value is: %d", userVal);
-			if (exact21(userVal) == true)
-			{
-				return 1;
-			}
-			else if (check21(userVal) == false)
-			{
-				return 0;
-			}
-		}
-
-
+			doubleDown(input);
 	}
 
 	for (i = 0; i < 3; i++)

@@ -17,3 +17,4 @@ int result(int, int);
 bool win(int);
 int gameplay();
 bool insure(int);
+bool doubleDown(int);
