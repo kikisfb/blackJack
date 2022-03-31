@@ -151,6 +151,9 @@
     <ClCompile Include="Scoring.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Deck.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
