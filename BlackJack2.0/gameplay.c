@@ -108,7 +108,7 @@ bool insure(int choice)
 	return result;
 }
 
-bool doubleDown(int res)
+bool doubleDownAns(int res)
 {
 	if (res == 3)
 	{
